@@ -13,8 +13,8 @@ export default function App() {
               <span className="text-xl font-bold text-gray-900">EEA</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Home</a>
-              <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">About</a>
+              <a href="/" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Home</a>
+              <a href="/about" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">About</a>
               <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Schedule</a>
               <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Speakers</a>
               <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Contact</a>
