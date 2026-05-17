@@ -1,31 +1,38 @@
 import { Calendar, MapPin, Users, Award, Clock, TrendingUp } from 'lucide-react';
+import { Link } from '@inertiajs/react';
 import { ImageWithFallback } from '@/components/image-with-fallback';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-card border-b border-border shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg"></div>
-              <span className="text-xl font-bold text-gray-900">EEA</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg"></div>
+              <span className="text-xl font-bold text-foreground">EEA</span>
             </div>
-            <div className="hidden md:flex items-center gap-8">
-              <a href="/" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Home</a>
-              <a href="/about" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">About</a>
-              <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Schedule</a>
-              <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Speakers</a>
-              <a href="#" className="px-4 py-2 text-gray-700 rounded-xl transition-all duration-200 ease-out hover:text-blue-600 hover:bg-blue-100 hover:-translate-y-0.5 hover:shadow-sm">Contact</a>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+              <Link href="/" className="px-4 py-2 rounded-xl transition-all duration-200 ease-out hover:text-primary hover:bg-primary/10">Home</Link>
+              <Link href="/about" className="px-4 py-2 rounded-xl transition-all duration-200 ease-out hover:text-primary hover:bg-primary/10">About</Link>
+              <Link href="/events" className="px-4 py-2 rounded-xl transition-all duration-200 ease-out hover:text-primary hover:bg-primary/10">Event</Link>
+              <Link href="/seminars" className="px-4 py-2 rounded-xl transition-all duration-200 ease-out hover:text-primary hover:bg-primary/10">Seminar</Link>
+              <Link href="/lombas" className="px-4 py-2 rounded-xl transition-all duration-200 ease-out hover:text-primary hover:bg-primary/10">Lomba</Link>
             </div>
             <div className="flex items-center gap-4">
-              <button className="px-8 py-2 bg-white text-gray-700 rounded-full border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transition-all">
+              <Link
+                href="/login"
+                className="px-8 py-2 bg-card text-foreground rounded-full border border-border hover:border-primary hover:text-primary transition-all"
+              >
                 Login
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition-shadow">
-                Register
-              </button>
+              </Link>
+              <Link
+                href="/events"
+                className="px-6 py-2 bg-gradient-to-r from-secondary to-primary text-white rounded-full hover:shadow-lg transition-shadow"
+              >
+                Lihat Event
+              </Link>
             </div>
           </div>
         </div>
@@ -41,30 +48,42 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-block px-5 py-2.5 rounded-full backdrop-blur-md bg-white/30 border border-white/40 text-gray-800 shadow-lg transition-all duration-300 hover:bg-white/50 hover:shadow-xl hover:-translate-y-0.5">
-                <span className="text-sm text-gray-700">🎉 Electrical Engineering in action</span>
+              <div className="inline-block px-5 py-2.5 rounded-full backdrop-blur-md bg-card/70 border border-border text-foreground shadow-lg transition-all duration-300 hover:bg-card hover:shadow-xl hover:-translate-y-0.5">
+                <span className="text-sm text-foreground">🎉 Electrical Engineering in action</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-                Make Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 ">National Event</span> & Convention Truly Memorable
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                Make Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">National Event</span> & Convention Truly Memorable
               </h1>
-              <p className="text-lg text-gray-600 ">
+              <p className="text-lg text-muted-foreground">
                 Join us for an unforgettable experience with industry leaders, innovative workshops, and networking opportunities that will transform your professional journey.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition-all">
-                  Get Ticket
-                </button>
-                <button className="px-8 py-3 bg-white text-gray-700 rounded-full border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transition-all">
-                  Learn More
-                </button>
+                <Link
+                  href="/events"
+                  className="px-8 py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition-all"
+                >
+                  Lihat Event
+                </Link>
+                <Link
+                  href="/seminars"
+                  className="px-8 py-3 bg-card text-foreground rounded-full border border-border hover:border-primary hover:text-primary transition-all"
+                >
+                  Daftar Seminar
+                </Link>
+                <Link
+                  href="/lombas"
+                  className="px-8 py-3 bg-card text-foreground rounded-full border border-border hover:border-primary hover:text-primary transition-all"
+                >
+                  Daftar Lomba
+                </Link>
               </div>
               <div className="flex items-center gap-6 pt-4">
                 <div className="flex -space-x-3 ">
                   {[
-                  "levi-lei-KvRKc6_LkG8-unsplash.jpg",
-                  "roblokmantep.png",
-                  "mojtaba-mohammadi-azbFk_fV9_U-unsplash.jpg",
-                  "vlcsnap-2026-02-04-15h51m30s166.png",
+                  "img/levi-lei-KvRKc6_LkG8-unsplash.jpg",
+                  "img/roblokmantep.png",
+                  "img/mojtaba-mohammadi-azbFk_fV9_U-unsplash.jpg",
+                  "img/vlcsnap-2026-02-04-15h51m30s166.png",
                     ].map((src, i) => (
                 <img
                   key={i}
@@ -76,27 +95,25 @@ export default function App() {
                     ))}
                   </div>
               <div>
-                <p className="text-sm font-semibold text-gray-900">2,500+ Attendees</p>
-                <p className="text-xs text-gray-500">Already registered</p>
+                <p className="text-sm font-semibold text-foreground">2,500+ Attendees</p>
+                <p className="text-xs text-muted-foreground">Already registered</p>
               </div>
               </div>
             </div>
-            <div className="relative w-full h-120 rounded-2xl overflow-hidden 
-[mask-image:radial-gradient(circle,rgba(0,0,0,0.7)_30%,rgba(0,0,0,0.2)_60%,rgba(0,0,0,0)_100%)]
-[-webkit-mask-image:radial-gradient(circle,rgba(0,0,0,0.7)_40%,rgba(0,0,0,0.2)_80%,rgba(0,0,0,0)_100%)]">
+              <div className="relative w-full h-[36rem] rounded-2xl overflow-hidden">
               {/* Background image */}
               <img
-                src="awan vertikal.jpg"
+                src="img/awan vertikal.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
               {/* Overlay biar ga terlalu rame */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30"></div>
 
               {/* Logo di depan */}
               <div className="relative w-full h-full flex items-center justify-center">
                 <ImageWithFallback
-                  src="logo eea 2026.png"
+                  src="img/logo eea 2026.png"
                   alt="EEA Logo"
                   className="w-60 object-contain drop-shadow-lg"
                 />

@@ -24,4 +24,46 @@ class User extends Authenticatable
     protected $hidden = [
         'PASSWORD',
     ];
+
+    // Mapping kolom kapital ke yang diharapkan Laravel Auth
+    public function getAuthIdentifierName()
+    {
+        return 'USER_ID';
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->PASSWORD;
+    }
+
+    public function getEmailForPasswordReset()
+    {
+        return $this->EMAIL;
+    }
+
+    // Kirim data ke frontend dengan format lowercase
+    public function toArray()
+    {
+        return [
+            'id'                => $this->USER_ID,
+            'name'              => $this->NAME,
+            'email'             => $this->EMAIL,
+            'role'              => $this->ROLE,
+            'avatar'            => null,
+            'email_verified_at' => null,
+            'created_at'        => null,
+            'updated_at'        => null,
+        ];
+    }
+
+    // Accessor agar $user->name dan $user->email bisa diakses
+    public function getNameAttribute()
+    {
+        return $this->attributes['NAME'] ?? null;
+    }
+
+    public function getEmailAttribute()
+    {
+        return $this->attributes['EMAIL'] ?? null;
+    }
 }
